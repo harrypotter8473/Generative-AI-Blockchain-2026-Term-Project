@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/28991354/README.md)
 Daily Korea Morning Briefing Agent
 
 Course: Generative AI and Blockchain
