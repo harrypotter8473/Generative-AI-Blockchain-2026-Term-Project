@@ -1,28 +1,33 @@
-Daily Korea Morning Briefing Agent
+# Daily Korea Morning Briefing Agent
 
 Course: Generative AI and Blockchain
+
 Project title: Daily Korea Morning Briefing Agent  
+
 Team / Member: Youngu Lee
+
 Primary project type: Smartened OpenClaw/Agent System  
+
 Secondary type: Cost-Efficient AI Stack / Privacy-Preserving AI Service  
+
 Status: Final submission draft
 
-1. Project overview
+### 1. Project overview
 
 Daily Korea Morning Briefing Agent is a collaborative multi-agent workflow that automatically creates a reliable morning news briefing for Korean user. The system runs at 07:00 KST, collects a larger candidate pool, verifies and filters sources, selects the final 10 news items, summarizes them, delivers the result to Discord, and records the workflow in local logs and Notion.
 
 This project is not a single summarization bot. It separates the workflow into two agent roles:
 
-- Agent A: Orchestrator / Verifier**
+- Agent A: Orchestrator / **Verifier**
   - Checks freshness, duplicates, source diversity, and user relevance.
   - Selects the final 10 items.
   - Produces the final Discord-ready briefing.
   - Records execution evidence and errors.
-- Agent B: Collector / Reviewer**
+- Agent B: Collector / **Reviewer**
   - Collects at least 15 candidate news items.
   - Records title, source, link, importance, and trace information.
 
-2. Problem statement and target user
+### 2. Problem statement and target user
 
 Problem
 
@@ -32,7 +37,7 @@ Target user
 
 The target user is a Korean reader, student, researcher, or worker who wants a concise and trustworthy daily morning briefing without manually checking multiple news sources.
 
-3. Practical value
+### 3. Practical value
 
 The system provides practical value by:
 
@@ -43,7 +48,7 @@ The system provides practical value by:
    5. Maintaining a local backup log even when Notion logging fails.
    6. Supporting user-specific personalization, such as preferred news categories, topics, keywords, or media sources, so the daily briefing can be tailored to the user’s interests instead of providing a generic news summary.
 
-4. Installation and execution instructions
+### 4. Installation and execution instructions
 
 Prerequisites
 - OpenClaw installed and configured
@@ -67,7 +72,7 @@ Basic execution flow
 python code/scripts/hash_manifest.py usage-log/ hash_manifest.jsonl
 ```
 
-5. Differentiation versus big-tech assistants/platforms
+### 5. Differentiation versus big-tech assistants/platforms
 
 This project differs from general big-tech assistants in the following ways:
 
@@ -92,11 +97,11 @@ This project differs from general big-tech assistants in the following ways:
    7. Tamper-evident extension path  
       The project includes a future blockchain-based verification direction where hashes of briefings, links, logs, and traces can be stored to detect post-edit changes.
 
-6. 7-day usage log summary
+### 6. 7-day usage log summary
 
 The 7-day usage log is stored in:
 
-- [`usage-log/usage-log.md`](usage-log/usage-log.md)
+- ```usage-log/usage-log.md```
 
 Summary fields to maintain:
 
@@ -112,7 +117,7 @@ Summary fields to maintain:
 
 > Important: Do not invent usage logs. Replace the template rows with real execution evidence before final submission.
 
-7. Cost estimate and local/cloud stack discussion
+### 7. Cost estimate and local/cloud stack discussion
 
 Estimated monthly cost
 
@@ -127,7 +132,7 @@ Cloud/API: Codex-based AI agent reasoning, web search, Discord posting, and Noti
 
 This hybrid stack keeps evidence logs and backup files local while using cloud-based tools only for tasks that require external access or strong reasoning capability. Since the system mainly relies on a paid Codex subscription, the estimated operating cost remains approximately $20 per month, with no additional cloud server or paid database cost currently required.
 
-8. Privacy and security summary
+### 8. Privacy and security summary
 
 Data handled
 
@@ -148,7 +153,7 @@ Privacy design
 Threat model
 
 | Threat                  | Risk               | Mitigation                                    |
-|                         |                    |                                               |
+|-------------------------|--------------------|-----------------------------------------------|
 | Hallucinated news       | False briefing     | Source verification and candidate pool review |
 | Duplicate or stale news | Low-quality output | Freshness and duplicate checks                |
 | Single-agent failure    | Unchecked mistakes | Agent role separation                         |
@@ -157,7 +162,7 @@ Threat model
 | Secret leakage          | Account compromise | `.gitignore` and no token commits             |
 
 
-9. Technical rigor and smartening method
+### 9. Technical rigor and smartening method
 
 Architecture
 
